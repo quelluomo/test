@@ -1,4 +1,4 @@
-class CreateVideoRatings < ActiveRecord::Migration[5.2]
+class CreateVideoRatings < ActiveRecord::Migration
   def change
     create_table :video_ratings do |t|
       t.integer :video_id
