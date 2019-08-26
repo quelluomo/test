@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  root 'application#index', as: 'home'
   devise_for :users
   resources :comments
   resources :video_ratings

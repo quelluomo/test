@@ -1,0 +1,19 @@
+<header>
+  <div class="container">
+    <div class="logo"><%= link_to "Unbearable FM", home_path %></div>
+    <nav>
+      <ul>
+          <% if user_signed_in? %>
+            <li><%= link_to "Sign out", destroy_user_session_path, :method => "delete" %></li>
+            <li>Howdy, <%= current_user.name %></li>
+
+          <% else %>
+            <p>Howdy!</br>
+            <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <li><%= link_to "Log in", new_user_session_path %></li>
+          </p>
+          <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
