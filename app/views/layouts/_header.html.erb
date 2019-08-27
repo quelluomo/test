@@ -5,7 +5,7 @@
       <ul>
           <% if user_signed_in? %>
             <li><%= link_to "Sign out", destroy_user_session_path, :method => "delete" %></li>
-            <li>Howdy!</li>
+            <p>Howdy!</p>
 
           <% else %>
             <p>Howdy!</br>
