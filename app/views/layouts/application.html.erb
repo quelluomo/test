@@ -9,6 +9,14 @@
   <body>
     <%= render 'layouts/header' %>
 
+    <% if @previous %>
+      <%= link_to "Previous", @previous %>
+    <% end %>
+
+    <% if @next %>
+      <%= link_to "Previous", @previous %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
