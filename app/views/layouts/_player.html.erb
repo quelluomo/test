@@ -3,9 +3,9 @@
   src='https://www.youtube.com/embed/<%= @video.url %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>'
   frameborder="0"></iframe>
 
-  <% if @previous %>
-    <%= link_to "<< Previous", @previous %>
-  <% end %>
+
+    <%= link_to "<< Previous", @video.previous if @video.previous.present? %>
+
 
   <% if @next %>
     <%= link_to "Next >>", @previous %>

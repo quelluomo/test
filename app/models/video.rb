@@ -3,15 +3,17 @@ class Video < ActiveRecord::Base
   has_many :comments
   has_many :video_ratings
   has_many :ratings, :through => :video_ratings
+  attr_reader :url
 
-  accepts_nested_attributes_for :ratings, reject_if: lambda {|attributes| attributes['status'].blank?}
+  #accepts_nested_attributes_for :ratings, reject_if: lambda {|attributes| attributes['status'].blank?}
   validates_presence_of :title, :url
 
-  def next
+
+  def self.next
     self.where("id > ?", id).first
   end
 
   def previous
-    self.where("id < ?", id).last
+    self.where(["id < ?", id]).order('id').last
   end
 end
