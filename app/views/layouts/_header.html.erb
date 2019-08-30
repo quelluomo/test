@@ -4,8 +4,10 @@
     <nav>
       <ul>
           <% if user_signed_in? %>
+          <p>Howdy!
+            <li><%= link_to "Add a video", new_video_path %></li>
             <li><%= link_to "Sign out", destroy_user_session_path, :method => "delete" %></li>
-            <p>Howdy!</p>
+          </p>
 
           <% else %>
             <p>Howdy!</br>
