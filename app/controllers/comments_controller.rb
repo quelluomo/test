@@ -20,14 +20,13 @@ class CommentsController < ApplicationController
 
   # POST /comments
   def create
-    @comment = Comment.new(comment_params)
-    respond_to do |format|
-      if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+    @video = Video.find_by(id: params[:video_id])
+		@comment = @video.comments.create(comment_params)
+		if @comment.save
+        redirect_to video_path(@video)
       else
         format.html { render action: 'new' }
       end
-    end
   end
 
   # PATCH/PUT /comments/1
@@ -56,6 +55,6 @@ class CommentsController < ApplicationController
 
 
     def comment_params
-      params.require(:comment).permit(:content)
+      params.require(:comment).permit(:author, :content)
     end
 end

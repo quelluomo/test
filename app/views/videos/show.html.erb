@@ -13,13 +13,9 @@
 
   <ul class="comment-list">
   	<% @comments.each do | comment |  %>
-  		<li>
-  			<strong><%= comment.author %> says: </strong>
-  			<br>
-  			<p>
-  			  <%= comment.content %>
-  			</p>
-  		</li>
+  		<ul>
+  			 <%= comment.content %>
+  		</ul>
     </ul>
   <% end %>
 <% end %>
