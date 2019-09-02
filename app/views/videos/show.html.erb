@@ -1,5 +1,25 @@
-<h2><%=@video.title %></h2>
-
-<h2><%=@video.url %></h2>
+<h3><%= link_to(@video.title, video_path(@video))%></h3>
 
 <%= render 'layouts/player' %>
+
+<% if user_signed_in? %>
+  <form data-id="<%= @video.id %>" class="js-video-comment-form" action="/videos/<%= @video.id %>/comments" method="POST">
+  	<label for="video-comment-content">Leave a comment</label>
+  	<br>
+    <input type="text" name="comment[content]" value="Enter your comment...">
+  	<br>
+  	<button type="submit">Submit</button>
+  </form>
+
+  <ul class="comment-list">
+  	<% @comments.each do | comment |  %>
+  		<li>
+  			<strong><%= comment.author %> says: </strong>
+  			<br>
+  			<p>
+  			  <%= comment.content %>
+  			</p>
+  		</li>
+    </ul>
+  <% end %>
+<% end %>

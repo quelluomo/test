@@ -2,16 +2,20 @@ class VideosController < ApplicationController
 
   def new
     @video = Video.new
+    render :new
   end
 
   def index
     @videos = Video.all
     @user = current_user
+    render :index
   end
 
   def show
     @video = Video.find(params[:id])
     @user = current_user
+    @comments = @video.comments
+		render :show
   end
 
   def edit
@@ -37,6 +41,12 @@ class VideosController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+		@video = Video.find_by(id: params[:id])
+		@video.destroy
+		redirect_to '/'
+	end
 
   private
 
