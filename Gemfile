@@ -15,6 +15,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
 # Use jquery as the JavaScript library
+gem 'rails_db', '2.0.4'
+gem 'axlsx_rails'
 
 gem "awesome_print", require:"ap"
 
