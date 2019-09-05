@@ -8,14 +8,16 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   </head>
   <body>
-    <section class="section">
+    <section class="section has-background-dark">
 
         <%= render 'layouts/header' %>
 
     </section>
 
-  <div class="container">
+  <section class="section has-background-dark">
+    <div class="container  has-background-light">
     <%= yield %>
   </div>
+  </section>
   </body>
 </html>

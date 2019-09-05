@@ -1,6 +1,8 @@
 <%= render 'layouts/player' %>
-<p>
+<div class="columns">
 <% @videos.each do |video| %>
-  <%= link_to video.title, video_path(video) %>
+  <div class="column">
+    <%= link_to video.title, video_path(video) %>
+  </div>
 <% end %>
-</p>
+</div>

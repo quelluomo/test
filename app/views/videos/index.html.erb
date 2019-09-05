@@ -1,8 +1,10 @@
-<p>
+<div class="columns">
 <% @videos.each do | video | %>
+<div class="column">
 	<h4><%= link_to(video.title, video_path(video))%></h4>
   <iframe id="player" type="text/html" width="320" height="195"
     src='https://www.youtube.com/embed/<%= video.url %>?rel=0&autoplay='
     frameborder="0"></iframe>
+		</div>
 <% end %>
-</p>
+</div>
