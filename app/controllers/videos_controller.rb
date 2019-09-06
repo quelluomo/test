@@ -13,6 +13,7 @@ class VideosController < ApplicationController
 
   def show
     @video = Video.find(params[:id])
+    @url = @video.get_url
     @user = current_user
     @comments = @video.comments
 		render :show

@@ -8,6 +8,9 @@ class Video < ActiveRecord::Base
   #accepts_nested_attributes_for :ratings, reject_if: lambda {|attributes| attributes['status'].blank?}
   validates_presence_of :title, :url
 
+  def get_url
+    self.url.match(/^.{32}(.*)$/)
+  end
 
   #def self.next
   #  self.where("id > ?", id).first
