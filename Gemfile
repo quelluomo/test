@@ -12,7 +12,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem 'omniauth-facebook'
 gem 'omniauth-github'
 # Use jquery as the JavaScript library
 gem 'rails_db', '2.0.4'
@@ -42,25 +41,25 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'high_voltage'
 
 group :development do
-  gem 'better_errors'
+  #gem 'better_errors'
   #gem 'quiet_assets'
   gem 'rails_layout'
-  gem 'spring-commands-rspec'
+  #gem 'spring-commands-rspec'
   gem 'pry'
 end
 
 group :development, :test do
-  gem 'factory_bot_rails'
-  gem 'faker'
-  gem 'rspec-rails'
+  #gem 'factory_bot_rails'
+  #gem 'faker'
+  #gem 'rspec-rails'
 end
 
 group :test do
   gem 'capybara'
-  gem 'database_cleaner'
+  #gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
 end
 
-gem "devise", ">= 4.6.0"
+gem "devise"
 gem 'devise_invitable'

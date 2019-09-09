@@ -2,12 +2,16 @@ Rails.application.routes.draw do
 
 
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+  devise_scope :user do
+  get '/users/sign_out' => 'devise/sessions#destroy'
+end
+
   root 'videos#index', as: 'home'
   resources :comments
   resources :video_ratings
   resources :ratings
   resources :videos
-  resources :users
+  #resources :users
 
   post '/videos/:video_id/comments' => 'comments#create'
 
