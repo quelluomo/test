@@ -74,7 +74,6 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
-    database_cleaner (1.7.0)
     devise (4.7.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -132,7 +131,7 @@ GEM
     multi_xml (0.6.0)
     multipart-post (2.1.1)
     nio4r (2.5.1)
-    nokogiri (1.10.4)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     oauth2 (1.4.1)
       faraday (>= 0.8, < 0.16.0)
@@ -264,7 +263,6 @@ DEPENDENCIES
   axlsx_rails
   capybara
   coffee-rails (~> 4.1.0)
-  database_cleaner
   devise
   devise_invitable
   high_voltage
